@@ -1,0 +1,179 @@
+{
+    "editor.minimap.enabled": false,
+
+    // vim surround
+    "vim.surround": true,
+
+    // vim settings
+    "vim.insertModeKeyBindings": [
+        {
+            // "before": ["<C-g>"],
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    // vim noremap
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // 全選択
+        { "before": ["<Leader>", "a"], "after": ["g", "g", "V","G"]},
+        // qで検索ハイライトの解除
+        { "before": ["<Leader>", "q"], "commands": [":nohl"]},
+        // コメント
+        { "before": ["<Leader>", "c"], "commands": [{ "command": "editor.action.commentLine"}]},
+        // カーソル位置に改行を挿入
+        { "before": ["<Enter>"], "after": ["i", "<CR>",  "<ESC>", "k"]},
+        // 直前の行に1行空行を入れる
+        { "before": ["<Leader>", "O"], "after": ["O", "<ESC>", "j"]},
+        // 直後の行に1行空行を入れる
+        { "before": ["<Leader>", "o"], "after": ["o", "<ESC>", "k"]},
+    ],
+    // visual mode
+    "vim.visualModeKeyBindingsNonRecursive":[ 
+        {"before": ["<C-g>"], "after": ["<Esc>"]},
+        // ビジュアルモードで連続ペーストする
+        { "before": ["p"], "after": ["\"", "_", "d", "P"]},
+        // ビジュアルモードでインデントした場合に、ビジュアルモードを保持する
+        { "before": [">"], "after": [">", "g", "v"]},
+        { "before": [">"], "after": [">", "g", "v"]},
+        // コメント
+        { "before": ["<Leader>", "c"], "commands": [
+            { "command": "editor.action.commentLine"},
+            { "command": "extension.vim_escape"}
+            ]},
+    ],
+
+    // leaderキーの設定
+    "vim.leader": "<space>",
+    // vimrcからの読み込み
+    // vimrcだと共有が難しいので、一旦このまま。neovimとか扱い出すとわからない
+    // "vim.vimrc.enable":true,
+    // "vim.vimrc.path": "~/.vimrc",
+
+    // 検索ハイライト
+    "vim.hlsearch": true,
+    // クリップボード共有
+    "vim.useSystemClipboard": true,
+    // 折り畳まれた場所を展開しない
+    "vim.foldfix": true,
+    "emmet.variables": {
+        "lang": "ja"
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.autoClosingQuotes": "never",
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+
+    "clang.executable": "clang++",
+    "code-runner.runInTerminal": true,
+    "clang.cxxflags": [ "-std=c++14"],
+    "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ -O2 -std=c++14 $fileName && ./a.out",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[rust]": {
+        // formatterの設定
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        // 保存時に自動でフォーマットする
+        "editor.formatOnSave": true,
+    },
+    "java.inlayHints.parameterNames.enabled": "none",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+
+
+    "python.analysis.extraPaths": [
+        "/opt/homebrew/lib/python3.11/site-packages"
+    ],
+    "python.autoComplete.extraPaths": [
+
+        "/opt/homebrew/lib/python3.11/site-packages"
+    ],
+    "editor.stickyScroll.enabled": true,
+    "vim.statusBarColors.easymotioninputmode": "",
+    "vim.easymotion": true,
+    "vim.statusBarColors.easymotionmode": "",
+    "java.showBuildStatusOnStart.enabled": "notification",
+    "json.schemas": [
+
+
+
+
+
+
+    ],
+    // "maven.executable.path": "~/.m2/repository"
+    "maven.executable.path": "/opt/homebrew/bin/mvn",
+    "explorer.compactFolders": false,
+    "git.path": "",
+    "php.debug.executablePath": "",
+    "git.openRepositoryInParentFolders": "never",
+    "zig.path": "/Users/kip2/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zig_install/zig",
+    "zig.zls.path": "/Users/kip2/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+    "zig.initialSetupDone": true,
+    "haskell.manageHLS": "GHCup",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "idris.executablePath": "idris2",
+    "git.confirmSync": false,
+    "markdown-preview-enhanced.enablePreviewZenMode": false,
+    "markdown-preview-enhanced.previewTheme": "gothic.css",
+    "markdown-preview-enhanced.revealjsTheme": "moon.css",
+    "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
+    "remote.autoForwardPortsSource": "hybrid",
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    }
+}
